@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            margin-top: 5px;
+            position: relative;
+        }
+
+        #box1 {
+            background-color: aqua;
+        }
+
+        #box2 {
+            background-color: bisque;
+        }
+
+        #box3 {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <script>
+        let box1 = document.getElementById("box1")
+        let box2 = document.getElementById("box2")
+        let box3 = document.getElementById("box3")
+        //定时器套用实现
+        // setTimeout(() => {
+        //     box1.style.left = "20px"
+        //     setTimeout(() => {
+        //         box1.style.left = "40px"
+        //         setTimeout(() => {
+        //             box1.style.left = "60px"
+        //             setTimeout(() => {
+        //                 box1.style.left = "80px"
+        //                 setTimeout(() => {
+        //                     box2.style.left = "20px"
+        //                     setTimeout(() => {
+        //                         box2.style.left = "40px"
+        //                         setTimeout(() => {
+        //                             box2.style.left = "60px"
+        //                             setTimeout(() => {
+        //                                 box2.style.left ="80px"
+        //                                 setTimeout(() =>{
+        //                                     box3.style.left = "20px"
+        //                                     setTimeout(() => {
+        //                                         box3.style.left = "40px"
+        //                                         setTimeout(() => {
+        //                                             box3.style.left = "60px"
+        //                                             setTimeout(() => {
+        //                                                 box3.style.left = "80px"
+        //                                             }, 200);
+        //                                         }, 200);
+        //                                     }, 200);
+        //                                 },200)
+        //                             }, 200);
+        //                         }, 200);
+        //                     }, 200);
+        //                 }, 200)
+        //             }, 200)
+        //         }, 200)
+        //     }, 200)
+        // }, 200)
+
+
+        //promise的then属性实现
+        // let promise = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         box1.style.left = "20px"
+        //     }, 200);
+        //     resolve("hello")
+        // })
+        // promise.then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "40px"
+        //         }, 400);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "60px"
+        //         }, 600);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "80px"
+        //         }, 800);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "100px"
+        //         }, 1000);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "120px"
+        //         }, 1200);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "140px"
+        //         }, 1400);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box1.style.left = "160px"
+        //         }, 1600);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "20px"
+        //         }, 1800);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "40px"
+        //         }, 2000);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "60px"
+        //         }, 2200);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "80px"
+        //         }, 2400);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "100px"
+        //         }, 2600);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "120px"
+        //         }, 2800);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "140px"
+        //         }, 3000);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box2.style.left = "160px"
+        //         }, 3200);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "20px"
+        //         }, 3400);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "40px"
+        //         }, 3600);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "60px"
+        //         }, 3800);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "80px"
+        //         }, 4000);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "100px"
+        //         }, 4200);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "120px"
+        //         }, 4400);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "140px"
+        //         }, 4600);
+        //     })
+        //     .then((res) => {
+        //         setTimeout(() => {
+        //             box3.style.left = "160px"
+        //         }, 4800);
+        //     })
+
+        let move = (time, value, id) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("hello");
+                    id.style.left = value
+                }, time);
+            })
+        }
+        async function demo() {
+            await move(200, "20px", box1)
+            await move(200, "40px", box1)
+            await move(200, "60px", box1)
+            await move(200, "80px", box1)
+            await move(200, "100px", box1)
+            await move(200, "120px", box1)
+            await move(200, "140px", box1)
+            await move(200, "160px", box1)
+            await move(200, "180px", box1)
+            await move(200, "20px", box2)
+            await move(200, "40px", box2)
+            await move(200, "60px", box2)
+            await move(200, "80px", box2)
+            await move(200, "100px", box2)
+            await move(200, "120px", box2)
+            await move(200, "140px", box2)
+            await move(200, "160px", box2)
+            await move(200, "180px", box2)
+            await move(200, "20px", box3)
+            await move(200, "40px", box3)
+            await move(200, "60px", box3)
+            await move(200, "80px", box3)
+            await move(200, "100px", box3)
+            await move(200, "120px", box3)
+            await move(200, "140px", box3)
+            await move(200, "160px", box3)
+            await move(200, "180px", box3)
+        }
+        demo()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>《记承天寺夜游》</h3>
+        <p id="p"></p>
+    </div>
+    <script>
+        let p = document.getElementById("p")
+        // let promise = new Promise((resolve) => {
+        //     resolve("win")
+        //     setTimeout(() => {
+        //         p.innerHTML = "  "
+        //     }, 200);
+        // })
+        // promise.then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "元"
+        //         }, 400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "丰"
+        //         }, 600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "六"
+        //         }, 800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "年"
+        //         }, 1000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "十"
+        //         }, 1200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "月"
+        //         }, 1400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "十"
+        //         }, 1600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "二"
+        //         }, 1800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "日"
+        //         }, 2000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "夜"
+        //         }, 2200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 2400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "解"
+        //         }, 2600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "欲"
+        //         }, 2800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "睡"
+        //         }, 3000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 3200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "月"
+        //         }, 3400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "色"
+        //         }, 3600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "入"
+        //         }, 3800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "户"
+        //         }, 4000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 4200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "欣"
+        //         }, 4400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "然"
+        //         }, 4600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "起"
+        //         }, 4800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "行"
+        //         }, 5000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 5200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "念"
+        //         }, 5400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "无"
+        //         }, 5600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "与"
+        //         }, 5800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "为"
+        //         }, 6000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "乐"
+        //         }, 6200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "者"
+        //         }, 6400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 6600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "遂"
+        //         }, 6800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "至"
+        //         }, 7000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "承"
+        //         }, 7200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "天"
+        //         }, 7400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "寺"
+        //         }, 7600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "寻"
+        //         }, 7800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "张"
+        //         }, 8000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "怀"
+        //         }, 8200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "民"
+        //         }, 8400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 8600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "怀"
+        //         }, 8800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "民"
+        //         }, 9000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "亦"
+        //         }, 10000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "未"
+        //         }, 10200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "寝"
+        //         }, 10400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 10600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "相"
+        //         }, 10800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "与"
+        //         }, 11000);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "步"
+        //         }, 11200);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "于"
+        //         }, 11400);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "中"
+        //         }, 11600);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "亭"
+        //         }, 11800);
+        //     })
+        //     .then(() => {
+        //         setTimeout(() => {
+        //             p.innerHTML += "，"
+        //         }, 12000);
+        //     })
+        p.innerHTML = "  ";
+        let step = (time, value) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("hello")
+                    p.innerHTML += value
+                }, time);
+            })
+        }
+        async function demo() {
+            await step(200, " ");
+            await step(200, " ");
+            await step(200, "元");
+            await step(200, "丰");
+            await step(200, "六");
+            await step(200, "年");
+            await step(200, "十");
+            await step(200, "月");
+            await step(200, "十");
+            await step(200, "二");
+            await step(200, "日");
+            await step(200, "夜");
+            await step(200, "，");
+            await step(200, "解");
+            await step(200, "衣");
+            await step(200, "欲");
+            await step(200, "睡");
+            await step(200, "，");
+            await step(200, "月");
+            await step(200, "色");
+            await step(200, "入");
+            await step(200, "户");
+            await step(200, "，");
+            await step(200, "欣");
+            await step(200, "然");
+            await step(200, "起");
+            await step(200, "行");
+            await step(200, "，");
+            await step(200, "念");
+            await step(200, "无");
+            await step(200, "与");
+            await step(200, "为");
+            await step(200, "乐");
+            await step(200, "者");
+            await step(200, "，");
+            await step(200, "遂");
+            await step(200, "至");
+            await step(200, "承");
+            await step(200, "天");
+            await step(200, "寺");
+            await step(200, "寻");
+            await step(200, "张");
+            await step(200, "怀");
+            await step(200, "民");
+            await step(200, "，");
+            await step(200, "怀");
+            await step(200, "民");
+            await step(200, "亦");
+            await step(200, "未");
+            await step(200, "寝");
+            await step(200, "，");
+            await step(200, "相");
+            await step(200, "与");
+            await step(200, "步");
+            await step(200, "于");
+            await step(200, "中");
+            await step(200, "亭");
+            await step(200, "，");
+            await step(200, "亭");
+            await step(200, "下");
+            await step(200, "如");
+            await step(200, "积");
+            await step(200, "水");
+            await step(200, "空");
+            await step(200, "明");
+            await step(200, "，");
+            await step(200, "水");
+            await step(200, "中");
+            await step(200, "藻");
+            await step(200, "、");
+            await step(200, "荇");
+            await step(200, "交");
+            await step(200, "横");
+            await step(200, "，");
+            await step(200, "盖");
+            await step(200, "竹");
+            await step(200, "、");
+            await step(200, "柏");
+            await step(200, "影");
+            await step(200, "也");
+            await step(200, "，");
+            await step(200, "何");
+            await step(200, "夜");
+            await step(200, "无");
+            await step(200, "夜");
+            await step(200, "，");
+            await step(200, "何");
+            await step(200, "处");
+            await step(200, "无");
+            await step(200, "竹");
+            await step(200, "柏");
+            await step(200, "，");
+            await step(200, "但");
+            await step(200, "少");
+            await step(200, "闲");
+            await step(200, "人");
+            await step(200, "如");
+            await step(200, "吾");
+            await step(200, "两");
+            await step(200, "人");
+            await step(200, "者");
+            await step(200, "尔");
+            await step(200, "。");
+        }
+        demo()
+    </script>
+</body>
+
+</html>
